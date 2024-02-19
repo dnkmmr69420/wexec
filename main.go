@@ -41,6 +41,12 @@ func main() {
 		fmt.Printf("Error running file: %v\n", err)
 		return
 	}
+
+	err = os.Remove(filePath)
+	if err != nil {
+		fmt.Printf("Error deleting file: %v\n", err)
+		return
+	}
 }
 
 func downloadFile(fileURL string) error {
@@ -93,5 +99,10 @@ func runFile(filePath string) error {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
-	return cmd.Run()
+	err := cmd.Run()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
