@@ -38,8 +38,6 @@ func main() {
 
 	err = runFile(filePath, os.Args[2:])
 	if err != nil {
-		fmt.Printf("Error running file: %v\n", err)
-		return
 	}
 
 	err = os.Remove(filePath)
@@ -100,11 +98,6 @@ func runFile(filePath string, args []string) error {
 	cmd.Stderr = os.Stderr
 
 	err := cmd.Run()
-	if err != nil {
-		return err
-	}
-
-	err = os.Remove(filePath) // Delete the executed file
 	if err != nil {
 		return err
 	}
