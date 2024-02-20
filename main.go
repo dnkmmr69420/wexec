@@ -13,7 +13,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run main.go <url> [arguments...]")
+		fmt.Println("Usage: wexec <url> [arguments...]")
 		return
 	}
 
