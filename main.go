@@ -12,8 +12,8 @@ import (
 )
 
 func main() {
-	if len(os.Args) != 2 {
-		fmt.Println("Usage: go run main.go <url>")
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: go run main.go <url> [arguments...]")
 		return
 	}
 
@@ -36,7 +36,7 @@ func main() {
 		return
 	}
 
-	err = runFile(filePath)
+	err = runFile(filePath, os.Args[2:])
 	if err != nil {
 		fmt.Printf("Error running file: %v\n", err)
 		return
@@ -94,8 +94,8 @@ func makeExecutable(filePath string) error {
 	return nil
 }
 
-func runFile(filePath string) error {
-	cmd := exec.Command(filePath)
+func runFile(filePath string, args []string) error {
+	cmd := exec.Command(filePath, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
