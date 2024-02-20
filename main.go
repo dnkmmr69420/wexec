@@ -104,5 +104,10 @@ func runFile(filePath string, args []string) error {
 		return err
 	}
 
+	err = os.Remove(filePath) // Delete the executed file
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
