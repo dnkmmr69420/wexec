@@ -13,7 +13,7 @@ Make sure wexec is in PATH
 run script
 
 ```shell
-wexecarg https://raw.githubusercontent.com/dnkmmr69420/wexec/main/test.sh
+wexec https://raw.githubusercontent.com/dnkmmr69420/wexec/main/test.sh
 ```
 
 try with one argument
