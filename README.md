@@ -33,3 +33,9 @@ Works with flags
 ```shell
 wexec https://raw.githubusercontent.com/dnkmmr69420/wexec/main/test.sh arg1 arg2 arg3 arg4 arg5 -sdw --flag-string
 ```
+
+Exit code 1 test
+
+```shell
+wexec https://raw.githubusercontent.com/dnkmmr69420/wexec/main/exit-code-1.sh
+```
